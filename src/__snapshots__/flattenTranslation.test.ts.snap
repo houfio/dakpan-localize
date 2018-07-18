@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should flatten the object 1`] = `
+Object {
+  "form.email": Array [
+    "Email address",
+  ],
+  "form.other.test": Array [
+    "awdwadawd",
+  ],
+  "form.password": Array [
+    "Password",
+  ],
+  "message": Array [
+    "hello",
+  ],
+}
+`;

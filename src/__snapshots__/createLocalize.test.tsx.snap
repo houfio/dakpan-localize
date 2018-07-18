@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change the language 1`] = `
+<Provider>
+  <Component>
+    <Consumer>
+      <WithConsumer>
+        <Consumer>
+          <Component
+            setLanguage={[Function]}
+          >
+            <button
+              onClick={[Function]}
+            >
+              lang
+            </button>
+            <Translate
+              id="test.message"
+            >
+              <Consumer>
+                message
+              </Consumer>
+            </Translate>
+          </Component>
+        </Consumer>
+      </WithConsumer>
+    </Consumer>
+  </Component>
+</Provider>
+`;
+
+exports[`should change the language 2`] = `
+<Provider>
+  <Component>
+    <Consumer>
+      <WithConsumer>
+        <Consumer>
+          <Component
+            setLanguage={[Function]}
+          >
+            <button
+              onClick={[Function]}
+            >
+              lang
+            </button>
+            <Translate
+              id="test.message"
+            >
+              <Consumer>
+                bericht
+              </Consumer>
+            </Translate>
+          </Component>
+        </Consumer>
+      </WithConsumer>
+    </Consumer>
+  </Component>
+</Provider>
+`;
+
+exports[`should override the parent translations 1`] = `
+<Provider>
+  <One>
+    <Consumer>
+      <Component>
+        <Translate
+          id="test"
+        >
+          <Consumer>
+            hello
+          </Consumer>
+        </Translate>
+        <Translate
+          id="hello"
+        >
+          <Consumer>
+            yes
+          </Consumer>
+        </Translate>
+        <Two>
+          <Consumer>
+            <Component>
+              <Translate
+                id="test"
+              >
+                <Consumer>
+                  it works!
+                </Consumer>
+              </Translate>
+              <Translate
+                id="hello"
+              >
+                <Consumer>
+                  yes
+                </Consumer>
+              </Translate>
+            </Component>
+          </Consumer>
+        </Two>
+      </Component>
+    </Consumer>
+  </One>
+</Provider>
+`;
+
+exports[`should replace placeholders with provided data 1`] = `
+<Provider>
+  <Component>
+    <Consumer>
+      <Component>
+        <Translate
+          data={
+            Object {
+              "name": "Steve",
+            }
+          }
+          id="greeting"
+        >
+          <Consumer>
+            Hello Steve!
+          </Consumer>
+        </Translate>
+      </Component>
+    </Consumer>
+  </Component>
+</Provider>
+`;
