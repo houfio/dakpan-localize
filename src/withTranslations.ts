@@ -1,4 +1,4 @@
-import { ComponentType, createElement } from 'react';
+import { ComponentType, createElement, ReactElement } from 'react';
 
 import { ProviderProps, Translations } from './types';
 
@@ -14,5 +14,5 @@ export const withTranslations = (
     children: createElement(component, props as P)
   });
 
-  return WithTranslations
+  return WithTranslations;
 };

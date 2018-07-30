@@ -1,4 +1,4 @@
-import { Context, createElement } from 'react';
+import { ConsumerProps, Context, createElement, ReactElement } from 'react';
 
 import { LocalizeState, TranslateProps } from './types';
 

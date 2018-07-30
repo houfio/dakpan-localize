@@ -1,4 +1,14 @@
 import { createDakpan } from 'dakpan';
+import {
+  Component,
+  ComponentClass,
+  ConsumerProps,
+  ProviderProps,
+  ReactElement,
+  ReactNodeArray,
+  ReactPortal,
+  StatelessComponent
+} from 'react';
 
 import { createProvider } from './createProvider';
 import { createTranslate } from './createTranslate';
