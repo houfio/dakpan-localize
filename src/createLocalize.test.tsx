@@ -84,3 +84,25 @@ it('should replace placeholders with provided data', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+it('should be possible not to use the hocs', () => {
+  const { LocalizeProvider, Translate, TranslationProvider } = createLocalize('en', ['en']);
+
+  const wrapper = mount(
+    <LocalizeProvider>
+      <TranslationProvider
+        translations={{
+          test: {
+            message: [
+              'hello!'
+            ]
+          }
+        }}
+      >
+        <Translate id="test.message"/>
+      </TranslationProvider>
+    </LocalizeProvider>
+  );
+
+  expect(wrapper).toMatchSnapshot();
+});

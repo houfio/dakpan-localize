@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type LocalizeState = {
   language: string,
   languages: string[],
@@ -15,4 +17,9 @@ export type TranslateProps = {
   data?: {
     [key: string]: string
   }
+};
+
+export type ProviderProps = {
+  children: ReactNode,
+  translations: Translations
 };

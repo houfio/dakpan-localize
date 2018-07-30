@@ -1,9 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should be possible not to use the hocs 1`] = `
+<Provider>
+  <TranslationProvider
+    translations={
+      Object {
+        "test": Object {
+          "message": Array [
+            "hello!",
+          ],
+        },
+      }
+    }
+  >
+    <Translate
+      id="test.message"
+    >
+      hello!
+    </Translate>
+  </TranslationProvider>
+</Provider>
+`;
+
 exports[`should change the language 1`] = `
 <Provider>
-  <Component>
-    <Consumer>
+  <WithTranslations>
+    <TranslationProvider
+      translations={
+        Object {
+          "test": Object {
+            "message": Array [
+              "message",
+              "bericht",
+            ],
+          },
+        }
+      }
+    >
       <WithConsumer>
         <Consumer>
           <Component
@@ -17,22 +50,31 @@ exports[`should change the language 1`] = `
             <Translate
               id="test.message"
             >
-              <Consumer>
-                message
-              </Consumer>
+              message
             </Translate>
           </Component>
         </Consumer>
       </WithConsumer>
-    </Consumer>
-  </Component>
+    </TranslationProvider>
+  </WithTranslations>
 </Provider>
 `;
 
 exports[`should change the language 2`] = `
 <Provider>
-  <Component>
-    <Consumer>
+  <WithTranslations>
+    <TranslationProvider
+      translations={
+        Object {
+          "test": Object {
+            "message": Array [
+              "message",
+              "bericht",
+            ],
+          },
+        }
+      }
+    >
       <WithConsumer>
         <Consumer>
           <Component
@@ -46,67 +88,84 @@ exports[`should change the language 2`] = `
             <Translate
               id="test.message"
             >
-              <Consumer>
-                bericht
-              </Consumer>
+              bericht
             </Translate>
           </Component>
         </Consumer>
       </WithConsumer>
-    </Consumer>
-  </Component>
+    </TranslationProvider>
+  </WithTranslations>
 </Provider>
 `;
 
 exports[`should override the parent translations 1`] = `
 <Provider>
   <One>
-    <Consumer>
+    <TranslationProvider
+      translations={
+        Object {
+          "hello": Array [
+            "yes",
+          ],
+          "test": Array [
+            "hello",
+          ],
+        }
+      }
+    >
       <Component>
         <Translate
           id="test"
         >
-          <Consumer>
-            hello
-          </Consumer>
+          hello
         </Translate>
         <Translate
           id="hello"
         >
-          <Consumer>
-            yes
-          </Consumer>
+          yes
         </Translate>
         <Two>
-          <Consumer>
+          <TranslationProvider
+            translations={
+              Object {
+                "test": Array [
+                  "it works!",
+                ],
+              }
+            }
+          >
             <Component>
               <Translate
                 id="test"
               >
-                <Consumer>
-                  it works!
-                </Consumer>
+                it works!
               </Translate>
               <Translate
                 id="hello"
               >
-                <Consumer>
-                  yes
-                </Consumer>
+                yes
               </Translate>
             </Component>
-          </Consumer>
+          </TranslationProvider>
         </Two>
       </Component>
-    </Consumer>
+    </TranslationProvider>
   </One>
 </Provider>
 `;
 
 exports[`should replace placeholders with provided data 1`] = `
 <Provider>
-  <Component>
-    <Consumer>
+  <WithTranslations>
+    <TranslationProvider
+      translations={
+        Object {
+          "greeting": Array [
+            "Hello {name}!",
+          ],
+        }
+      }
+    >
       <Component>
         <Translate
           data={
@@ -116,12 +175,10 @@ exports[`should replace placeholders with provided data 1`] = `
           }
           id="greeting"
         >
-          <Consumer>
-            Hello Steve!
-          </Consumer>
+          Hello Steve!
         </Translate>
       </Component>
-    </Consumer>
-  </Component>
+    </TranslationProvider>
+  </WithTranslations>
 </Provider>
 `;
