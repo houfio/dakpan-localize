@@ -1,6 +1,6 @@
 {
   "name": "dakpan-localize",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple localization for React.",
   "main": "./lib/index.js",
   "umd": "./lib/index.umd.js",
